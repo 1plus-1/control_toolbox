@@ -204,8 +204,8 @@ public:
    * \param i_max The max integral windup.
    * \param i_min The min integral windup.
    */
-  void initPid(double p, double i, double d, double i_max, double i_min, const ros::NodeHandle& /*node*/);
-  void initPid(double p, double i, double d, double i_max, double i_min, bool antiwindup, const ros::NodeHandle& /*node*/);
+  void initPid(double p, double i, double d, double i_max, double i_min, const ros::NodeHandle& node);
+  void initPid(double p, double i, double d, double i_max, double i_min, bool antiwindup, const ros::NodeHandle& node);
 
   /*!
    * \brief Initialize PID with the parameters in a namespace

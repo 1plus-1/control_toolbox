@@ -71,23 +71,19 @@ Pid::~Pid()
 }
 
 void Pid::initPid(double p, double i, double d, double i_max, double i_min,
-  const ros::NodeHandle& /*node*/)
+  const ros::NodeHandle& node)
 {
   initPid(p, i, d, i_max, i_min);
 
-  // Create node handle for dynamic reconfigure
-  ros::NodeHandle nh(DEFAULT_NAMESPACE);
-  initDynamicReconfig(nh);
+  initDynamicReconfig((ros::NodeHandle &)node);
 }
 
 void Pid::initPid(double p, double i, double d, double i_max, double i_min, bool antiwindup,
-  const ros::NodeHandle& /*node*/)
+  const ros::NodeHandle& node )
 {
   initPid(p, i, d, i_max, i_min, antiwindup);
 
-  // Create node handle for dynamic reconfigure
-  ros::NodeHandle nh(DEFAULT_NAMESPACE);
-  initDynamicReconfig(nh);
+  initDynamicReconfig((ros::NodeHandle &)node);
 }
 
 void Pid::initPid(double p, double i, double d, double i_max, double i_min, bool antiwindup)
